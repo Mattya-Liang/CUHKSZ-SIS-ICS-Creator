@@ -6,7 +6,7 @@ def select_directory():
     root = tk.Tk()
     root.withdraw()
     directory = filedialog.askdirectory(title="请选择下载并解压后的sis文件夹")
-    if not directory:  # 检查用户是否点击了取消
+    if not directory: 
         return None
     return directory
 
@@ -34,7 +34,7 @@ def select_output_filename():
     root = tk.Tk()
     root.withdraw()
     filename = simpledialog.askstring("输入自定义的ICS文件名", "请给 ICS 文件命个名吧 QWQ （不包含扩展名哦）：")
-    if filename is None:  # 检查用户是否点击了取消
+    if filename is None: 
         return None
     return filename + ".ICS"
 
@@ -78,7 +78,7 @@ def merge_ics_files():
                 compositeICS.write("END:VCALENDAR")
             
             print("ICS 文件合并成功！")
-            break  # 如果成功，就退出循环
+            break
         
         except Exception as e:
             print(f"发生错误: {e}。请重新尝试。")
